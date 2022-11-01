@@ -1,0 +1,138 @@
+:root {
+  --text: hsl(215, 51%, 70%);
+  --eql-cl: hsl(178, 100%, 50%);
+  --main-BG: hsl(217, 54%, 11%);
+  --card-BG: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+body {
+  background-color: var(--main-BG);
+  font-family: "Outfit", sans-serif;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 25px;
+}
+
+.card {
+  background-color: var(--card-BG);
+  border-radius: 20px;
+  max-width: 350px;
+  height: 600px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding: 25px ;
+}
+.card .images{
+  position: relative;
+  display: flex;
+ 
+}
+.card .images .card-image {
+  width: 100%;
+  border-radius: 15px;
+  
+}
+
+.nft {
+  font-size: 22px;
+  color: var(--white);
+  font-weight: 600;
+  margin: 15px 0px;
+}
+
+.description {
+  font-weight: 300;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--text);
+  line-height: 25px;
+}
+
+.value {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.value .current-value {
+  display: flex;
+  color: var(--eql-cl);
+  font-weight: 400;
+  gap: 5px;
+}
+
+.value .date {
+  display: flex;
+  gap: 5px;
+  color: var(--text);
+}
+
+hr {
+  margin-bottom: 25px;
+  border-color: var(--line);
+}
+
+.creator {
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  gap: 15px;
+}
+.creator img {
+  border: 1px solid white;
+  border-radius: 50%;
+  max-width: 40px;
+}
+.creator p {
+  color: var(--text);
+}
+.creator p span {
+  color: var(--white);
+  font-weight: 300;
+}
+
+.nft:hover,
+.creator p span:hover {
+  color: var(--eql-cl);
+  cursor: pointer;
+}
+.card-image:hover {
+  cursor: pointer;
+}
+
+.card .images::before {
+  /* display: none; */
+  content: "";
+  background-color: cyan;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: 0.3s ease-in-out ;
+}
+
+.card .images::after {
+  content: "";
+  background: url(../images/icon-view.svg) no-repeat center;
+  position: absolute ;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.3s ease-in-out ;
+}
+.card .images:hover::before{
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.card .images:hover::after{
+  opacity: 1;
+  cursor: pointer;
+}
